@@ -1,6 +1,7 @@
 package play
 
 import (
+	"crypto/md5"
 	"fmt"
 	"strings"
 )
@@ -34,10 +35,8 @@ func Backtick() {
 }
 
 func StringCast() {
-	var s interface{} = "abc"
-	r := -1
-	r, ok := s.(int)
-	fmt.Printf("is OK : '%v', value: '%v'\n", ok, r)
+	b := [md5.Size]byte{1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 11, 12, 13, 14, 15}
+	fmt.Println("cast: ", string(b[:]))
 }
 
 func SliceString() {
