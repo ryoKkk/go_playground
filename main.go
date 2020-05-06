@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	/**
 	fmt.Println("------- string ------")
-	play.SliceString()
+	play.StringCast()
 	fmt.Println("------- map ------")
 	play.CopyAndSetMap()
 	fmt.Println("------- struct ------")
@@ -22,8 +22,26 @@ func main() {
 	play.DateToString()
 	fmt.Println("------- slice -------")
 	play.AppendSlice()
+<<<<<<< HEAD
 	fmt.Println("------- rand -------")
 	play.PlayRand()
+=======
+	fmt.Println("------- env var -------")
+	play.EnvVar()
+	fmt.Println("------- aws s3 -------")
+	play.DownloadFromS3()
+	play.PathTest()
+	fmt.Println("------- file -------")
+	play.PlayFileMode()
+	fmt.Println("------- channel -------")
+	//play.PlayChannel()
+	//play.PlaySelect()
+	//play.PlayFanIn()
+	//play.PlayCloseChannel()
+	play.PlayConcurrentMD5()
+	fmt.Println("------- return -------")
+	//play.PlayReturn()
+>>>>>>> 13a2ea88242ce83b264636efdff006001a341379
 	fmt.Println("------- dynamodb -------")
 	*/
 	// play.DDBGetItem()
