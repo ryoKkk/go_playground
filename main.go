@@ -1,12 +1,9 @@
 package main
 
-import (
-	"fmt"
-
-	"github.com/ryoKkk/go_playground/play"
-)
+import "fmt"
 
 func main() {
+	/**
 	fmt.Println("------- string ------")
 	play.SliceString()
 	fmt.Println("------- map ------")
@@ -25,7 +22,10 @@ func main() {
 	play.DateToString()
 	fmt.Println("------- slice -------")
 	play.AppendSlice()
+	fmt.Println("------- rand -------")
+	play.PlayRand()
 	fmt.Println("------- dynamodb -------")
+	*/
 	// play.DDBGetItem()
 	// play.DDBUpdateItem()
 	/**
@@ -43,4 +43,24 @@ func main() {
 	// play.Succeeds(h)
 	play.Succeeds(&h)
 	*/
+	p := receiver{
+		"Ellery",
+		20,
+	}
+	p.SayHello("How are you ?")
+	p.Dummy()
+	(receiver).SayHello(p, "yes")
+}
+
+type receiver struct {
+	Name string
+	Age  int
+}
+
+func (p receiver) SayHello(greeting string) {
+	fmt.Println(greeting + " from " + p.Name)
+}
+
+func (p receiver) Dummy() {
+
 }
