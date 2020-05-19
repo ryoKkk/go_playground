@@ -27,3 +27,10 @@ func DateOperation() {
 	d := time.Date(now.Year(), now.Month(), now.Day()+1, 0, 0, 0, 0, time.Local)
 	fmt.Println("equal: ", tomorrow.Equal(d))
 }
+
+func PlayUnixTimestamp() {
+	n := time.Now()
+	fmt.Println("time now: ", n.Unix())
+	fmt.Println("time now milli: ", n.UnixNano()/int64(time.Millisecond))
+	fmt.Println("time now nano: ", n.UnixNano())
+}

@@ -22,7 +22,7 @@ func DDBGetItem() {
 				S: aws.String("202004101000_S02"),
 			},
 		},
-		ProjectionExpression: aws.String("ProsessedAt, SupplierCode"),
+		ProjectionExpression: aws.String("ProcessedAt, SupplierCode"),
 		TableName:            aws.String("Products"),
 	}
 	r, err := client.GetItem(input)
@@ -42,7 +42,7 @@ func DDBUpdateItem() {
 		"Icon1":          &icon,
 	}
 	p := Product{
-		ProsessedAt: "20200304",
+		ProcessedAt: "20200304",
 		Payload:     payload,
 	}
 	creator := DefaultUpdateStatementCreator{}
@@ -75,7 +75,7 @@ type Product struct {
 	CatalogCode  string `dynamodbav:"CatalogCode"`
 	EnabledOn    string `dynamodbav:"EnabledOn"`
 	SupplierCode string `dynamodbav:"SupplierCode,omitempty"`
-	ProsessedAt  string `dynamodbav:"ProsessedAt"`
+	ProcessedAt  string `dynamodbav:"ProcessedAt"`
 	Payload      map[string]*interface{}
 }
 
@@ -115,11 +115,11 @@ func (c DefaultUpdateStatementCreator) Create(prod *Product) (UpdateStatement, e
 		delete(mpayload, k)
 	}
 	avs := map[string]*dynamodb.AttributeValue{
-		":ProsessedAt": {
-			S: &prod.ProsessedAt,
+		":ProcessedAt": {
+			S: &prod.ProcessedAt,
 		},
 	}
-	set := "SET ProsessedAt = :ProsessedAt"
+	set := "SET ProcessedAt = :ProcessedAt"
 	for k, v := range mpayload {
 		arg := ":" + k
 		set += ", " + k + " = " + arg

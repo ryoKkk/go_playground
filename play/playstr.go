@@ -43,3 +43,8 @@ func SliceString() {
 	s := "abcdefg"
 	fmt.Println(s[:5], s[5:])
 }
+
+func StringCapitalize() {
+	s := "catalogCode"
+	fmt.Printf("catalog code: %s\n", strings.Title(s))
+}

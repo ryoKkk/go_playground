@@ -1,11 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/ryoKkk/go_playground/cloud"
+	"github.com/ryoKkk/go_playground/play"
+)
 
 func main() {
-	/**
 	fmt.Println("------- string ------")
-	play.StringCast()
+	// play.StringCast()
+	play.StringCapitalize()
+	/**
 	fmt.Println("------- map ------")
 	play.CopyAndSetMap()
 	fmt.Println("------- struct ------")
@@ -22,10 +28,8 @@ func main() {
 	play.DateToString()
 	fmt.Println("------- slice -------")
 	play.AppendSlice()
-<<<<<<< HEAD
 	fmt.Println("------- rand -------")
 	play.PlayRand()
-=======
 	fmt.Println("------- env var -------")
 	play.EnvVar()
 	fmt.Println("------- aws s3 -------")
@@ -38,15 +42,10 @@ func main() {
 	//play.PlaySelect()
 	//play.PlayFanIn()
 	//play.PlayCloseChannel()
-	play.PlayConcurrentMD5()
-	fmt.Println("------- return -------")
-	//play.PlayReturn()
->>>>>>> 13a2ea88242ce83b264636efdff006001a341379
+	//play.PlayConcurrentMD5()
 	fmt.Println("------- dynamodb -------")
-	*/
 	// play.DDBGetItem()
 	// play.DDBUpdateItem()
-	/**
 	fmt.Println("------- json -------")
 	play.StringToEmpty()
 	play.PointerToJson()
@@ -61,24 +60,25 @@ func main() {
 	// play.Succeeds(h)
 	play.Succeeds(&h)
 	*/
-	p := receiver{
-		"Ellery",
-		20,
-	}
-	p.SayHello("How are you ?")
-	p.Dummy()
-	(receiver).SayHello(p, "yes")
-}
-
-type receiver struct {
-	Name string
-	Age  int
-}
-
-func (p receiver) SayHello(greeting string) {
-	fmt.Println(greeting + " from " + p.Name)
-}
-
-func (p receiver) Dummy() {
-
+	// fmt.Println("------- time -------")
+	// play.PlayDate()
+	// play.PlayUnixTimestamp()
+	/**
+	fmt.Println("------- print -------")
+	play.PlayPrintLeftAlign()
+	*/
+	// fmt.Println("------- csp -------")
+	// csp.CspDivision()
+	// csp.PlayCspFactorial()
+	/**
+	name := flag.String("name", "", "test")
+	flag.Parse()
+	fmt.Println("name: ", *name)
+	*/
+	fmt.Println("------- s3 -------")
+	//cloud.PlayUploadingFile()
+	// cloud.DeleteFile()
+	cloud.PlayUploadingFile()
+	// cloud.TagFile()
+	// cloud.PlayLegalHold()
 }
